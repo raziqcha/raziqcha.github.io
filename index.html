@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RaziqCha Profile</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+        .video-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+
+        .video-background video {
+            min-width: 100%;
+            min-height: 100%;
+            width: auto;
+            height: auto;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: -1;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            max-width: 600px;
+            width: 90%;
+            padding: 60px;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            color: white;
+            text-align: center;
+            margin: 20px auto;
+        }
+
+        .profile-pic {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid purple;
+        }
+
+        h1 {
+            margin: 10px 0;
+            font-size: 2em;
+        }
+
+        header p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .main-btn {
+            background-color: purple;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .main-btn:hover {
+            background-color: purple;
+            transform: scale(1.05);
+        }
+
+        .links-container {
+            background-color: #000000;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .link-btn {
+            background-color: purple;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+            display: inline-block;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        .link-btn:hover {
+            background-color: purple;
+            transform: scale(1.05);
+        }
+
+        .links {
+            margin-top: 10px;
+        }
+
+        .links a {
+            display: block;
+            background-color: #ffffff;
+            color: #000000;
+            text-decoration: none;
+            padding: 10px 0;
+            margin: 5px 0;
+            border-radius: 5px;
+            font-size: 1.1em;
+            overflow: hidden;
+            position: relative;
+            transition: color 0.3s, transform 0.3s;
+        }
+
+        .links a:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('sasasaa.png') no-repeat center center;
+            background-size: cover;
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s, transform 0.3s;
+            transform: scale(1.1);
+        }
+
+        .links a:hover:before {
+            opacity: 0.3;
+            transform: scale(1);
+        }
+
+        .links a:hover {
+            color: #ffcc00;
+            transform: scale(1.05);
+        }
+
+        footer p {
+            margin-top: 20px;
+            font-size: 1em;
+            color: #ffffff;
+            text-decoration: underline;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
+
+        footer p:hover {
+            color: #cccccc;
+        }
+
+        .slide-left, .slide-right {
+            position: fixed;
+            top: 50%;
+            width: 200px;
+            height: 70%;
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            color: white;
+            text-align: center;
+            transform: translateY(-50%);
+            z-index: 2;
+            overflow: hidden;
+        }
+
+        .slide-left {
+            left: 22px;
+        }
+
+        .slide-right {
+            right: 22px;
+        }
+
+        .slide-left:hover, .slide-right:hover {
+            max-width: 350px;
+            width: 90%;
+            padding: 60px;
+        }
+
+        .slide-content {
+            padding: 20px;
+        }
+
+        .slide-content img {
+            width: 100px;
+            border-radius: 50%;
+            margin-bottom: 20px;
+            border: 3px solid purple;
+        }
+
+        .anime-poster {
+            width: 100px;
+            border-radius: 15px;
+            margin-bottom: 20px;
+            cursor: pointer;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .anime-poster:hover {
+            transform: scale(1.05);
+        }
+
+        .anime-episodes {
+            margin-top: -18px;
+            font-size: 1.1em;
+            color: orangered;
+        }
+
+        .anime-episodes a {
+            display: block;
+            color: red;
+            text-decoration: none;
+            padding: -100px ;
+            transition: color 0.3s;
+        }
+
+      
+
+    </style>
+</head>
+<body>
+    <div class="video-background">
+        <video autoplay muted loop>
+            <source src="kaka.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+    <div class="slide-left">
+        <div class="slide-content">
+            
+            <img src="kaori.jpg" alt="Anime Poster 2" class="anime-poster" data-anime="Anime 2">
+            <h2>Anime 1</h2>
+            <h2>Horimiya</h2>
+            <p class="anime-episodes">
+                Episodes:
+                <a href="1.mp4" target="_blank">Episode 1</a>
+                <a href="2.mp4" target="_blank">Episode 2</a>
+                <a href="3.mp4" target="_blank">Episode 3</a>
+                <a href="4.mp4" target="_blank">Episode 4</a>
+                <a href="5.mp4" target="_blank">Episode 5</a>
+                <a href="6.mp4" target="_blank">Episode 6</a>
+                <a href="7.mp4" target="_blank">Episode 7</a>
+                <a href="8.mp4" target="_blank">Episode 8</a>
+                <a href="9.mp4" target="_blank">Episode 9</a>
+                <a href="10.mp4" target="_blank">Episode 10</a>
+                <a href="11.mp4" target="_blank">Episode 11</a>
+                <a href="12.mp4" target="_blank">Episode 12</a>
+                <a href="13.mp4" target="_blank">Episode 13</a>
+        </div>
+
+
+    </div>
+    <div class="slide-right">
+        <div class="slide-content">
+           
+            <img src="saori.jpeg" alt="Anime Poster 2" class="anime-poster" data-anime="Anime 2">
+            <h2>Anime 2</h2>
+            <h2>Solo Leveling</h2>
+            <p class="anime-episodes">
+                Episodes:
+                <a href="#">Episode 1</a>
+                <a href="#">Episode 2</a>
+                <a href="#">Episode 3</a>
+                <a href="#">Episode 4</a>
+                <a href="#">Episode 5</a>
+                <a href="#">Episode 6</a>
+                <a href="#">Episode 7</a>
+                <a href="#">Episode 8</a>
+                <a href="#">Episode 9</a>
+                <a href="#">Episode 10</a>
+                <a href="#">Episode 11</a>
+                <a href="#">Episode 12</a>
+            </p>
+        </div>
+
+     
+
+    </div>
+    <div class="container">
+        <header>
+            <img src="keren.jpg" alt="Profile Picture" class="profile-pic">
+            <h1>RaziqCha</h1>
+            <p>Angin bertiup meniupi sebuah bunga tanpa akar</p>
+        </header>
+        <main>
+            <button class="main-btn">Main Page</button>
+            <div class="links-container">
+                <button class="link-btn">Here my all links to other websites</button>
+                <div class="links">
+                    <a href="https://github.com/raziqcha">GitHub</a>
+                    <a href="https://www.instagram.com/raziqcha?igsh=MTQ2cXg4aWVxZnlmYw==">Instagram</a>
+                    <a href="https://youtube.com/@m.raziqchairychoa4638?si=v-BpEy861Vz1MbN8">YouTube - RaziqCha</a>
+                    <a href="https://twitter.com">Twitter / X</a>
+                    <a href="https://saweria.co/raziqcha">Donate - Saweria</a>
+                    <a href="https://discord.gg/prFNa43x">Discord server</a>
+                    <a href="https://www.tiktok.com/@yoshiaki_ravenras?_t=8mOp3YYUZHd&_r=1">TikTok</a>
+                </div>
+            </div>
+            <script>
+                const animePosters = document.querySelectorAll('.anime-poster');
+        
+                animePosters.forEach(poster => {
+                    poster.addEventListener('click', () => {
+                        const episodes = poster.nextElementSibling;
+                        episodes.style.display = episodes.style.display === 'block' ? 'none' : 'block';
+                    });
+                });
+            </script>
+        </body>
+        </html>
